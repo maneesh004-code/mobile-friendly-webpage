@@ -1,0 +1,442 @@
+/* ========================================
+   RESPONSIVE DESIGN WITH CSS MEDIA QUERIES
+   ======================================== */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==================
+   DESKTOP STYLES (Default)
+   ================== */
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+/* Navigation - Desktop Horizontal Layout */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    text-align: center;
+    padding: 8rem 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+}
+
+.cta-button:hover {
+    background: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107,107,0.4);
+}
+
+/* Main Content Layout - Desktop: 2 Column Grid */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    padding: 4rem 0;
+}
+
+.content-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.content-section h2 {
+    color: #667eea;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+/* Sidebar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sidebar-widget {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.sidebar-widget h3 {
+    color: #764ba2;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.widget-link {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: #667eea;
+    text-decoration: none;
+}
+
+/* Features Grid - Desktop: 3 Columns */
+.features {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Images - Responsive by Default */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.article-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin: 1rem 0;
+}
+
+/* ==========================================
+   MEDIA QUERIES - RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+/* TABLET STYLES - 768px and below */
+@media screen and (max-width: 768px) {
+    
+    /* Reduce container padding */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Header adjustments */
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+    }
+
+    /* Navigation - Stack vertically on tablet */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 0.8rem;
+    }
+
+    /* Hero section - Reduce size */
+    .hero {
+        padding: 5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+
+    /* Main content - Convert to single column */
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 3rem 0;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    /* Features grid - 2 columns on tablet */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .features h2 {
+        font-size: 2.2rem;
+    }
+
+    .features {
+        padding: 3rem 0;
+    }
+}
+
+/* MOBILE STYLES - 480px and below */
+@media screen and (max-width: 480px) {
+    
+    /* Further reduce container padding */
+    .container {
+        padding: 0 10px;
+    }
+
+    /* Header - Stack and center */
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation - Full width buttons */
+    nav ul {
+        gap: 0.2rem;
+    }
+
+    nav a {
+        padding: 1rem;
+        margin: 0.1rem 0;
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* Hero - Mobile optimized */
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Main content - Reduce padding */
+    .main-content {
+        padding: 2rem 0;
+        gap: 1.5rem;
+    }
+
+    .content-section {
+        padding: 1rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .content-section p {
+        font-size: 1rem;
+    }
+
+    /* Features - Single column on mobile */
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .features {
+        padding: 2rem 0;
+    }
+
+    .features h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Sidebar widgets - Reduce padding */
+    .sidebar-widget {
+        padding: 1rem;
+    }
+
+    /* CTA button - Smaller on mobile */
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Footer - Smaller text */
+    footer {
+        padding: 1.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    /* Social links - Stack on very small screens */
+    .social-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* EXTRA SMALL MOBILE - 320px and below */
+@media screen and (max-width: 320px) {
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .features h2 {
+        font-size: 1.5rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
